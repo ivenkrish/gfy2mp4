@@ -19,7 +19,6 @@ chrome.windows.getAll({populate:true},function(windows){
 	windows.forEach(function(window){
 		window.tabs.forEach(function(tab){
 			if(tab.url.includes('gfycat.com')) {
-				console.log('inside 4');
 				name = tab.url.substring(tab.url.lastIndexOf("/") + 1);
 				jsonendpoint = 'https://gfycat.com/cajax/get/' + name
 				request = new XMLHttpRequest();
