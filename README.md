@@ -6,3 +6,6 @@ v1.2 - bug fixes
 v1.3 - imgur support
 v1.4 - support for gfycat new link format
 v1.5 - gfycat bug fixes
+
+Chrome webstore link:
+https://chrome.google.com/webstore/detail/save-gfycat-imgur-gifs-as/ealipkphbaohckcjcpgdepjibpceolmf
