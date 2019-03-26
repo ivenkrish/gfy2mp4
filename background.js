@@ -10,7 +10,7 @@ function download(urls) {
 		window.document.getElementById("status").innerHTML='Download complete';
 	}
 	else {
-		console.log("No gfycat links open");
+		console.log("Nothing to download");
 	}
 }
 
@@ -20,12 +20,19 @@ chrome.windows.getAll({populate:true},function(windows){
 		window.tabs.forEach(function(tab){
 			if(tab.url.includes('gfycat.com')) {
 				name = tab.url.substring(tab.url.lastIndexOf("/") + 1);
-				jsonendpoint = 'https://gfycat.com/cajax/get/' + name
+				name = name.split('.')[0];
+				name = name.split('-')[0];
+				jsonendpoint = 'https://api.gfycat.com/v1/gfycats/' + name
+				console.log(jsonendpoint);
 				request = new XMLHttpRequest();
 				request.open("GET", jsonendpoint, false);
 				request.send(null);
 				json = JSON.parse(request.responseText);
 				link = json.gfyItem.mp4Url;
+				urls.push(link);
+			}
+			else if(tab.url.includes('imgur.com') && tab.url.includes('gifv')) {
+				link = tab.url.replace('gifv', 'mp4');
 				urls.push(link);
 			}
 		});

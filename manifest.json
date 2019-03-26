@@ -1,8 +1,9 @@
 {
-  "name": "gfy2mp4",
-  "description": "dowload all gfycat links as mp4",
-  "version": "1.0",
+  "name": "Save gfycat, Imgur GIFs as mp4",
+  "description": "download all gfycat & imgur gifs open across all tabs as mp4",
+  "version": "1.5",
   "manifest_version": 2,
+  "icons": { "16": "logo.png", "48": "logo.png", "128": "logo.png" },
   "browser_action": {
     "name": "Click to get URL",
     "default_popup": "popup.html",
