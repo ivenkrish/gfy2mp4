@@ -1,6 +1,5 @@
 function download(urls) {
 	if(urls.length > 0) {
-		window.document.getElementById("status").innerHTML='Downloading...';
 		for(i in urls) {
 			console.log(urls[i]);
 			chrome.downloads.download({
@@ -11,6 +10,7 @@ function download(urls) {
 	}
 	else {
 		console.log("Nothing to download");
+		window.document.getElementById("status").innerHTML='Nothing to download';
 	}
 }
 
@@ -31,11 +31,25 @@ chrome.windows.getAll({populate:true},function(windows){
 				link = json.gfyItem.mp4Url;
 				urls.push(link);
 			}
+			else if (tab.url.includes('redgifs.com')) {
+				name = tab.url.substring(tab.url.lastIndexOf("/") + 1);
+				name = name.split('.')[0];
+				name = name.split('-')[0];
+				jsonendpoint = 'https://api.redgifs.com/v1/gfycats/' + name
+				console.log(jsonendpoint);
+				request = new XMLHttpRequest();
+				request.open("GET", jsonendpoint, false);
+				request.send(null);
+				json = JSON.parse(request.responseText);
+				link = json.gfyItem.mp4Url;
+				urls.push(link);
+			}
 			else if(tab.url.includes('imgur.com') && tab.url.includes('gifv')) {
 				link = tab.url.replace('gifv', 'mp4');
 				urls.push(link);
 			}
 		});
 	});
+	console.log("calling download");
 	download(urls);
 });

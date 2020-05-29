@@ -1,6 +1,6 @@
 {
-  "name": "Save gfycat, Imgur GIFs as mp4",
-  "description": "download all gfycat & imgur gifs open across all tabs as mp4",
+  "name": "Save RedGIFs, gfycat, Imgur GIFs as mp4",
+  "description": "download all redgifs, gfycat & imgur gifs open across all tabs as mp4",
   "version": "1.5",
   "manifest_version": 2,
   "icons": { "16": "logo.png", "48": "logo.png", "128": "logo.png" },
