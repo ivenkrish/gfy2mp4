@@ -11,5 +11,7 @@ v1.4 - support for gfycat new link format
 
 v1.5 - gfycat bug fixes
 
+v1.6 - Add support for RedGIFs
+
 Chrome webstore link:
 https://chrome.google.com/webstore/detail/save-gfycat-imgur-gifs-as/ealipkphbaohckcjcpgdepjibpceolmf
