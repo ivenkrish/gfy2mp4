@@ -44,6 +44,19 @@ chrome.windows.getAll({populate:true},function(windows){
 				link = json.gfyItem.mp4Url;
 				urls.push(link);
 			}
+			else if (tab.url.includes('gifdeliverynetwork.com')) {
+				name = tab.url.substring(tab.url.lastIndexOf("/") + 1);
+				name = name.split('.')[0];
+				name = name.split('-')[0];
+				jsonendpoint = 'https://api.gifdeliverynetwork.com/v1/gfycats/' + name
+				console.log(jsonendpoint);
+				request = new XMLHttpRequest();
+				request.open("GET", jsonendpoint, false);
+				request.send(null);
+				json = JSON.parse(request.responseText);
+				link = json.gfyItem.mp4Url;
+				urls.push(link);
+			}
 			else if(tab.url.includes('imgur.com') && tab.url.includes('gifv')) {
 				link = tab.url.replace('gifv', 'mp4');
 				urls.push(link);
