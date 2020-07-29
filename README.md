@@ -13,5 +13,7 @@ v1.5 - gfycat bug fixes
 
 v1.6 - Add support for RedGIFs
 
+v1.9 - Added option to close downloaded tabs
+
 Chrome webstore link:
 https://chrome.google.com/webstore/detail/save-gfycat-imgur-gifs-as/ealipkphbaohckcjcpgdepjibpceolmf
